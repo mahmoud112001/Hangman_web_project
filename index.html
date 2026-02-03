@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- CATEGORY SCREEN -->
+    <div id="categoryScreen" class="screen">
+      <header class="hero-section">
+        <h1 class="main-title">Hangman Game</h1>
+        <div class="input-group">
+          <input
+            id="playerName"
+            class="name-input"
+            placeholder="Enter your name..."
+            autocomplete="off"
+          />
+          <p id="nameError" class="error"></p>
+        </div>
+        <p>Choose a category to begin</p>
+      </header>
+      <div id="categoryList" class="category-list"></div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="gameScreen" class="screen hidden">
+      <div class="top-bar">
+        <div>👨‍💼 <span id="playerDisplay"></span></div>
+        <div>📂 <span id="categoryDisplay"></span></div>
+        <div>⭐ <span id="scoreDisplay">600</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="hintBtn" class="hint-btn">
+          💡 Hint (2 left) <small>-50pts</small>
+        </button>
+      </div>
+
+      <div class="game-container">
+        <div class="hangman-card">
+          <div class="hangman-draw">
+            <div id="base" class="part"></div>
+            <div id="stand" class="part"></div>
+            <div id="top" class="part"></div>
+            <div id="rope" class="part"></div>
+            <div id="head" class="part"></div>
+            <div id="body" class="part"></div>
+            <div id="hands" class="part"></div>
+            <div id="legs" class="part"></div>
+          </div>
+        </div>
+        <div id="keyboard" class="letters"></div>
+      </div>
+
+      <div id="guessSlots" class="letters-guess"></div>
+    </div>
+
+    <!-- RESULT POPUP -->
+    <div id="resultScreen" class="hidden result-wrapper">
+      <div class="result-card">
+        <h1 id="resultTitle"></h1>
+        <h2 id="finalPlayerName"></h2>
+
+        <p>The word was: <strong id="finalWord"></strong></p>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span class="label">Mistakes</span>
+            <span id="finalMistakes" class="value"></span>
+          </div>
+          <div class="stat-box">
+            <span class="label">Final Score</span>
+            <span id="finalScore" class="value highlight"></span>
+          </div>
+        </div>
+
+        <button class="play-again-btn" onclick="location.reload()">
+          New Challenge
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
