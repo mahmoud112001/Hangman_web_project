@@ -1,0 +1,5 @@
+The link of repo on Github: https://github.com/mahmoud112001/Hangman_web_project.git 
+The link of Deployment to try the game  online without colne and local run : https://mahmoud112001.github.io/Hangman_web_project/ 
+rec  :https://screenrec.com/share/vec0iJSrjG
+
+
