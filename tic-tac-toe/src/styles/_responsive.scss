@@ -1,0 +1,95 @@
+// ══════════════════════════════════════════════════
+// RESPONSIVE — Mobile-first adjustments
+// ══════════════════════════════════════════════════
+
+// ── Small screens (≤ 480px) ───────────────────────
+@include respond-to(sm) {
+
+  .app {
+    padding: $space-6 $space-4;
+    gap: $space-6;
+  }
+
+  .header {
+    &__title { font-size: $text-2xl; }
+    &__symbol { font-size: $text-xl; }
+  }
+
+  .board {
+    grid-template-columns: repeat(3, $cell-mobile);
+    grid-template-rows: repeat(3, $cell-mobile);
+    padding: $space-3;
+    gap: 6px;
+
+    &__cell {
+      width: $cell-mobile;
+      height: $cell-mobile;
+      font-size: $text-3xl;
+
+      &--x::after, &--o::after { font-size: $text-3xl; }
+    }
+  }
+
+  .scoreboard {
+    gap: $space-2;
+  }
+
+  .score-card {
+    padding: $space-3 $space-2;
+
+    &__value { font-size: $text-2xl; }
+  }
+
+  .setup {
+    &__modes { gap: $space-2; }
+    &__difficulties { gap: $space-2; }
+  }
+
+  .mode-btn {
+    padding: $space-4 $space-3;
+    &__icon { font-size: $text-lg; }
+    &__text { font-size: $text-sm; }
+  }
+
+  .diff-btn {
+    padding: $space-3 $space-2;
+    &__level { font-size: $text-xs; }
+  }
+
+  .btn-start {
+    padding: $space-4 $space-6;
+    font-size: $text-base;
+  }
+
+  .controls {
+    gap: $space-2;
+  }
+
+  .btn-control {
+    font-size: $text-xs;
+    padding: $space-2 $space-4;
+  }
+
+  .modal {
+    padding: $space-4;
+
+    &__card {
+      padding: $space-8 $space-6;
+    }
+
+    &__title { font-size: $text-xl; }
+    &__icon  { font-size: $text-3xl; }
+  }
+
+  .turn-indicator {
+    min-width: 200px;
+    padding: $space-2 $space-5;
+
+    &__text { font-size: $text-xs; }
+  }
+}
+
+// ── Medium screens (≤ 768px) ──────────────────────
+@include respond-to(md) {
+  .header__title { font-size: $text-2xl; }
+}
