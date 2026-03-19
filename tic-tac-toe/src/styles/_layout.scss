@@ -1,0 +1,135 @@
+// ══════════════════════════════════════════════════
+// LAYOUT — App shell, main sections, grid
+// ══════════════════════════════════════════════════
+
+// ── App wrapper ───────────────────────────────────
+.app {
+  @include flex-column-center;
+  min-height: 100vh;
+  padding: $space-8 $space-6;
+  gap: $space-8;
+  position: relative;
+  z-index: $z-base;
+
+  // Animated background grid
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba($color-x, 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($color-x, 0.018) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: -1;
+    animation: gridDrift 24s linear infinite;
+  }
+
+  // Ambient glow blobs
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 40% at 20% 30%, rgba($color-x, 0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 45% 40% at 80% 70%, rgba($color-o, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+    animation: blobPulse 10s ease-in-out infinite alternate;
+  }
+}
+
+// ── Header ────────────────────────────────────────
+.header {
+  @include flex-center;
+  gap: $space-6;
+  width: 100%;
+  max-width: 480px;
+  animation: fadeDown 0.6s ease both;
+
+  &__title-wrap {
+    @include flex-column-center;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $text-3xl;
+    font-weight: $weight-black;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    background: linear-gradient(135deg, $color-text 40%, $color-text-dim 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &__subtitle {
+    @include mono-tag;
+    margin-top: $space-1;
+  }
+
+  &__symbol {
+    font-size: $text-2xl;
+    font-weight: $weight-black;
+    opacity: 0.4;
+    transition: opacity $transition-base;
+
+    &--x { color: $color-x; }
+    &--o { color: $color-o; }
+
+    &:hover { opacity: 0.8; }
+  }
+}
+
+// ── Setup panel ───────────────────────────────────
+.setup {
+  @include flex-column-center;
+  gap: $space-8;
+  width: 100%;
+  max-width: 480px;
+  animation: fadeUp 0.6s 0.1s ease both;
+  animation-fill-mode: both;
+
+  &__group {
+    @include flex-column-center;
+    gap: $space-4;
+    width: 100%;
+  }
+
+  &__label {
+    @include mono-tag;
+  }
+
+  &__modes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-3;
+    width: 100%;
+  }
+
+  &__difficulties {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-3;
+    width: 100%;
+  }
+}
+
+// ── Game panel ────────────────────────────────────
+.game {
+  @include flex-column-center;
+  gap: $space-6;
+  width: 100%;
+  max-width: 480px;
+  animation: fadeUp 0.5s ease both;
+}
+
+// ── Controls row ──────────────────────────────────
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+  flex-wrap: wrap;
+  width: 100%;
+}
