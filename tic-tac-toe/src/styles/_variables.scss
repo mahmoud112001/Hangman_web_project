@@ -1,0 +1,103 @@
+// ══════════════════════════════════════════════════
+// DESIGN TOKENS — Single source of truth for all
+// visual values. Never hardcode values elsewhere.
+// ══════════════════════════════════════════════════
+
+// ── Colors ───────────────────────────────────────
+$color-bg:           #0a0b10;
+$color-surface:      #12141f;
+$color-surface-2:    #1a1d2e;
+$color-surface-3:    #222540;
+$color-border:       #2a2d45;
+$color-border-light: #3a3f60;
+
+$color-x:            #60a5fa;   // blue — Player X
+$color-x-dim:        rgba(96, 165, 250, 0.12);
+$color-x-glow:       rgba(96, 165, 250, 0.3);
+
+$color-o:            #f472b6;   // pink — Player O / CPU
+$color-o-dim:        rgba(244, 114, 182, 0.12);
+$color-o-glow:       rgba(244, 114, 182, 0.3);
+
+$color-win:          #4ade80;   // green — winner highlight
+$color-win-dim:      rgba(74, 222, 128, 0.15);
+$color-draw:         #fbbf24;   // amber — draw
+
+$color-text:         #e2e8f0;
+$color-text-muted:   #64748b;
+$color-text-dim:     #94a3b8;
+
+$color-danger:       #f87171;
+$color-danger-dim:   rgba(248, 113, 113, 0.1);
+
+// ── Spacing ───────────────────────────────────────
+$space-1:  4px;
+$space-2:  8px;
+$space-3:  12px;
+$space-4:  16px;
+$space-5:  20px;
+$space-6:  24px;
+$space-7:  28px;
+$space-8:  32px;
+$space-10: 40px;
+$space-12: 48px;
+$space-16: 64px;
+
+// ── Typography ────────────────────────────────────
+$font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+$font-mono: 'DM Mono', 'Fira Code', monospace;
+
+$text-xs:   0.65rem;
+$text-sm:   0.78rem;
+$text-base: 0.9rem;
+$text-md:   1rem;
+$text-lg:   1.2rem;
+$text-xl:   1.5rem;
+$text-2xl:  2rem;
+$text-3xl:  2.8rem;
+$text-4xl:  4rem;
+
+$weight-light:  300;
+$weight-normal: 400;
+$weight-medium: 500;
+$weight-bold:   700;
+$weight-black:  900;
+
+// ── Border Radius ─────────────────────────────────
+$radius-sm:   6px;
+$radius-md:   10px;
+$radius-lg:   16px;
+$radius-xl:   24px;
+$radius-full: 9999px;
+
+// ── Shadows ───────────────────────────────────────
+$shadow-sm:  0 2px 8px rgba(0, 0, 0, 0.3);
+$shadow-md:  0 4px 20px rgba(0, 0, 0, 0.4);
+$shadow-lg:  0 8px 40px rgba(0, 0, 0, 0.5);
+$shadow-x:   0 0 24px $color-x-glow;
+$shadow-o:   0 0 24px $color-o-glow;
+$shadow-win: 0 0 32px rgba(74, 222, 128, 0.35);
+
+// ── Transitions ───────────────────────────────────
+$transition-fast:   0.15s ease;
+$transition-base:   0.25s ease;
+$transition-slow:   0.4s ease;
+$transition-bounce: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// ── Z-Index Scale ─────────────────────────────────
+$z-base:    1;
+$z-board:   10;
+$z-overlay: 100;
+$z-modal:   200;
+
+// ── Board ─────────────────────────────────────────
+$board-size:    360px;
+$cell-size:     108px;
+$cell-gap:      8px;
+$board-mobile:  300px;
+$cell-mobile:   88px;
+
+// ── Breakpoints ───────────────────────────────────
+$bp-sm:  480px;
+$bp-md:  768px;
+$bp-lg:  1024px;
