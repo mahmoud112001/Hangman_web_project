@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional Tic Tac Toe — Player vs Player or Player vs CPU with 3 difficulty levels" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="src/styles/main.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       APP SHELL
+  ══════════════════════════════════════════════ -->
+  <div class="app" id="app">
+
+    <!-- ── HEADER ───────────────────────────────── -->
+    <header class="header">
+      <div class="header__symbol header__symbol--x" aria-hidden="true">✕</div>
+      <div class="header__title-wrap">
+        <h1 class="header__title">Tic Tac Toe</h1>
+        <p class="header__subtitle">// choose your game</p>
+      </div>
+      <div class="header__symbol header__symbol--o" aria-hidden="true">○</div>
+    </header>
+
+    <!-- ══════════════════════════════════════════
+         SETUP PANEL (visible before game starts)
+    ══════════════════════════════════════════ -->
+    <section class="setup" id="setup-panel" aria-label="Game setup">
+
+      <!-- Mode Selection -->
+      <div class="setup__group">
+        <p class="setup__label">// select mode</p>
+        <div class="setup__modes" role="group" aria-label="Game mode">
+          <button
+            class="mode-btn mode-btn--active"
+            id="btn-pvp"
+            data-mode="pvp"
+            aria-pressed="true"
+            type="button"
+          >
+            <span class="mode-btn__icon">👤👤</span>
+            <span class="mode-btn__text">1 vs 1</span>
+            <span class="mode-btn__sub">Two players</span>
+          </button>
+          <button
+            class="mode-btn"
+            id="btn-pvc"
+            data-mode="pvc"
+            aria-pressed="false"
+            type="button"
+          >
+            <span class="mode-btn__icon">👤🤖</span>
+            <span class="mode-btn__text">vs CPU</span>
+            <span class="mode-btn__sub">Challenge AI</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Difficulty Selection (shown only in CPU mode) -->
+      <div class="setup__group setup__group--difficulty hidden" id="difficulty-group">
+        <p class="setup__label">// select difficulty</p>
+        <div class="setup__difficulties" role="group" aria-label="Difficulty level">
+          <button
+            class="diff-btn diff-btn--active"
+            id="btn-easy"
+            data-difficulty="easy"
+            aria-pressed="true"
+            type="button"
+          >
+            <span class="diff-btn__level">Easy</span>
+            <span class="diff-btn__desc">Random moves</span>
+          </button>
+          <button
+            class="diff-btn"
+            id="btn-medium"
+            data-difficulty="medium"
+            aria-pressed="false"
+            type="button"
+          >
+            <span class="diff-btn__level">Medium</span>
+            <span class="diff-btn__desc">Blocks & attacks</span>
+          </button>
+          <button
+            class="diff-btn"
+            id="btn-hard"
+            data-difficulty="hard"
+            aria-pressed="false"
+            type="button"
+          >
+            <span class="diff-btn__level">Hard</span>
+            <span class="diff-btn__desc">Minimax AI</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Start Button -->
+      <button class="btn-start" id="btn-start" type="button" aria-label="Start game">
+        Start Game
+        <span class="btn-start__arrow">→</span>
+      </button>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         GAME PANEL (visible during game)
+    ══════════════════════════════════════════ -->
+    <section class="game hidden" id="game-panel" aria-label="Game board">
+
+      <!-- ── SCOREBOARD ──────────────────────────── -->
+      <div class="scoreboard" id="scoreboard" aria-label="Score board">
+        <div class="score-card score-card--x">
+          <span class="score-card__label" id="score-label-x">Player X</span>
+          <span class="score-card__value" id="score-x" aria-live="polite">0</span>
+          <span class="score-card__symbol">✕</span>
+        </div>
+        <div class="score-card score-card--draw">
+          <span class="score-card__label">Draws</span>
+          <span class="score-card__value" id="score-draw" aria-live="polite">0</span>
+          <span class="score-card__symbol">=</span>
+        </div>
+        <div class="score-card score-card--o">
+          <span class="score-card__label" id="score-label-o">Player O</span>
+          <span class="score-card__value" id="score-o" aria-live="polite">0</span>
+          <span class="score-card__symbol">○</span>
+        </div>
+      </div>
+
+      <!-- ── TURN INDICATOR ──────────────────────── -->
+      <div class="turn-indicator" id="turn-indicator" aria-live="polite" aria-atomic="true">
+        <div class="turn-indicator__dot" id="turn-dot"></div>
+        <span class="turn-indicator__text" id="turn-text">Player X's turn</span>
+      </div>
+
+      <!-- ── GAME BOARD ──────────────────────────── -->
+      <div
+        class="board"
+        id="board"
+        role="grid"
+        aria-label="Tic Tac Toe board"
+      >
+        <!-- Cells generated: 0–8 -->
+        <button class="board__cell" data-index="0" role="gridcell" aria-label="Cell 1" type="button"></button>
+        <button class="board__cell" data-index="1" role="gridcell" aria-label="Cell 2" type="button"></button>
+        <button class="board__cell" data-index="2" role="gridcell" aria-label="Cell 3" type="button"></button>
+        <button class="board__cell" data-index="3" role="gridcell" aria-label="Cell 4" type="button"></button>
+        <button class="board__cell" data-index="4" role="gridcell" aria-label="Cell 5" type="button"></button>
+        <button class="board__cell" data-index="5" role="gridcell" aria-label="Cell 6" type="button"></button>
+        <button class="board__cell" data-index="6" role="gridcell" aria-label="Cell 7" type="button"></button>
+        <button class="board__cell" data-index="7" role="gridcell" aria-label="Cell 8" type="button"></button>
+        <button class="board__cell" data-index="8" role="gridcell" aria-label="Cell 9" type="button"></button>
+      </div>
+
+      <!-- ── GAME CONTROLS ───────────────────────── -->
+      <div class="controls" id="controls">
+        <button class="btn-control btn-control--secondary" id="btn-restart" type="button">
+          ↺ Restart Round
+        </button>
+        <button class="btn-control btn-control--ghost" id="btn-menu" type="button">
+          ☰ Main Menu
+        </button>
+        <button class="btn-control btn-control--danger" id="btn-reset-score" type="button">
+          ✕ Reset Score
+        </button>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         RESULT MODAL (shown on win or draw)
+    ══════════════════════════════════════════ -->
+    <div
+      class="modal hidden"
+      id="result-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-message"
+    >
+      <div class="modal__backdrop" id="modal-backdrop"></div>
+      <div class="modal__card">
+
+        <div class="modal__icon" id="modal-icon" aria-hidden="true">🏆</div>
+        <h2 class="modal__title" id="modal-title">Player X Wins!</h2>
+        <p  class="modal__message" id="modal-message">Well played. Ready for the next round?</p>
+
+        <div class="modal__score-snap">
+          <div class="modal__score-item">
+            <span class="modal__score-label" id="modal-label-x">X</span>
+            <span class="modal__score-value" id="modal-score-x">0</span>
+          </div>
+          <div class="modal__score-item">
+            <span class="modal__score-label">Draws</span>
+            <span class="modal__score-value" id="modal-score-draw">0</span>
+          </div>
+          <div class="modal__score-item">
+            <span class="modal__score-label" id="modal-label-o">O</span>
+            <span class="modal__score-value" id="modal-score-o">0</span>
+          </div>
+        </div>
+
+        <div class="modal__actions">
+          <button class="btn-modal btn-modal--primary" id="btn-next-round" type="button">
+            Next Round →
+          </button>
+          <button class="btn-modal btn-modal--secondary" id="btn-modal-restart" type="button">
+            ↺ Restart
+          </button>
+          <button class="btn-modal btn-modal--ghost" id="btn-modal-menu" type="button">
+            ☰ Menu
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /.app -->
+
+  <script type="module" src="src/ts/main.ts"></script>
+
+</body>
+</html>
