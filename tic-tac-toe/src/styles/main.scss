@@ -1,0 +1,35 @@
+// ══════════════════════════════════════════════════
+// MAIN.SCSS — Entry point
+// Import order is intentional and must not change:
+// tokens → patterns → reset → base → layout →
+// components → features → animations → responsive
+// ══════════════════════════════════════════════════
+
+// 1. Design tokens (no output — just variables)
+@import 'variables';
+
+// 2. Reusable patterns (no output — just mixins)
+@import 'mixins';
+
+// 3. Browser normalization
+@import 'reset';
+
+// 4. Root defaults, typography, utilities
+@import 'base';
+
+// 5. Page structure
+@import 'layout';
+
+// 6. Shared UI components
+@import 'components';
+
+// 7. Feature-specific styles
+@import 'board';
+@import 'score';
+@import 'modal';
+
+// 8. Motion & effects
+@import 'animations';
+
+// 9. Breakpoint overrides (always last)
+@import 'responsive';
