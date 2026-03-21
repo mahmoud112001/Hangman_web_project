@@ -179,7 +179,7 @@ The enhanced version — rebuilt from scratch with a professional dark aesthetic
 - Hint system — reveals one random letter
 - Win / lose result screen
 
-
+---
 ---
 
 *Hangman Game — Final Lab · BasicJs Course · ITI ICC Program · Full-Stack MEARN Track · 2026*
