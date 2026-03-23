@@ -1,185 +1,165 @@
-# 🎮 Hangman Game — Choose Your Edition
+# 🎮 JS Game Station — Landing Page
 
-> **Course:** Basic HTML, CSS & JavaScript — Final Lab
-> **Instructor:** Eng. Omar Mosleh
+> **Developer:** Mahmoud Awad Saad
 > **Program:** ITI — ICC Program | Full-Stack MEARN Track
-> **Author:** Mahmoud Awad Saad
+> **Stack:** HTML5 · CSS3 · JavaScript
 > **Live:** [mahmoud112001.github.io/Hangman_web_project](https://mahmoud112001.github.io/Hangman_web_project/)
 
 ---
 
-## 🔗 Play Now
+## 📌 Description
 
-| Edition | Name | Live Demo |
+A production-level game collection landing page with a **Retro Arcade × Cyberpunk Terminal** aesthetic. Players choose from three games — each card presents a live animated preview, tech stack, description, and release date. Rebuilt from scratch with a complete design overhaul from the original v1 landing page.
+
+---
+
+## 📁 File Structure
+
+```
+LandingPage/
+├── index.html      ← Page structure
+├── style.css       ← All styles (split from v1's inline CSS)
+├── script.js       ← All scripts (split from v1's inline JS)
+├── screenshots/    ← Landing page screenshots
+└── README.md
+```
+
+> **v1** was a single self-contained `index.html` with inline CSS + JS.
+> **v2** is properly split into 3 separate files.
+
+---
+
+## 🔗 Live Demos
+
+| Game | Name | URL |
 |---|---|---|
-| **Version 01** | ⚙️ The Scaffold — Classic | [Play](https://mahmoud112001.github.io/Hangman_web_project/v1/) |
-| **Version 02** | ⭐ Gallows Noir — Dark Edition | [Play](https://mahmoud112001.github.io/Hangman_web_project/v2/) |
+| **Hangman v01** | ⚙️ The Scaffold — Classic | [Play](https://mahmoud112001.github.io/Hangman_web_project/v1/) |
+| **Hangman v02** | ⭐ Gallows Noir — Dark Edition | [Play](https://mahmoud112001.github.io/Hangman_web_project/v2/) |
+| **Tic Tac Toe** | ♟️ Grid Wars | [Play](https://mahmoud112001.github.io/Hangman_web_project/tic-tac-toe/) |
 
 ---
 
-## 📁 Project Structure
+## 🃏 Three Games
 
-```
-Hangman_web_project/
-├── index.html              ← Redirect to landing page
-├── CHANGLOG.md
-├── links.txt
-├── .gitignore
-│
-├── LandingPage/
-│   ├── index.html          ← Choose your edition page
-│   ├── script.js
-│   ├── style.css
-│   ├── README.md
-│   └── screenshots/
-│
-├── v1/                     ← The Scaffold (Classic)
-│   ├── index.html
-│   ├── script.js
-│   ├── style.css
-│   ├── README.md
-│   └── screenshots/
-│
-└── v2/                     ← Gallows Noir (Dark Edition)
-    ├── index.html
-    ├── script.js
-    ├── style.css
-    ├── README.md
-    ├── thumbnail.png
-    └── screenshots/
-```
-
----
-
-## 🎨 The Two Editions
-
-### ⚙️ v1 — The Scaffold *(Classic)*
-
+### ⚙️ The Scaffold *(Hangman v1 — Classic)*
 > *"Where it all began. Raw, minimal, and pure."*
+- Light pastel theme · 4 categories · Fixed 8 lives · Single HTML file
 
-The original Hangman experience built as part of the BasicJs course fundamentals. Simple, clean, and focused on core JavaScript logic.
-
-| | Details |
-|---|---|
-| **Theme** | Light gradient — `#f4fbfa` |
-| **Categories** | 4 (Programming, Movies, Animals, Sports) |
-| **Lives** | Fixed 8 |
-| **Hints** | 1 reveal per game |
-| **Difficulty** | Single level |
-| **Files** | Single HTML file |
-
----
-
-### ⭐ v2 — Gallows Noir *(Dark Edition)*
-
+### ⭐ Gallows Noir *(Hangman v2 — Dark Edition)*
 > *"Reborn in darkness. Harder, smarter, and alive with animation."*
+- Dark animated theme · 6 categories + difficulty · Leaderboard · Physical keyboard
 
-The enhanced version — rebuilt from scratch with a professional dark aesthetic, more features, better logic, and a polished UX.
-
-| | Details |
-|---|---|
-| **Theme** | Dark noir — `#0b0c10` with animated background |
-| **Categories** | 6 (+ Countries, Technology) |
-| **Lives** | Dynamic: 4 / 6 / 8 per difficulty |
-| **Hints** | Description hint + letter reveal |
-| **Difficulty** | Easy / Medium / Hard with score multiplier |
-| **Leaderboard** | Top 5 scores via `localStorage` |
-| **Physical keyboard** | ✅ Press any key to play |
-| **Files** | Separated: `index.html` + `style.css` + `script.js` |
+### ♟️ Grid Wars *(Tic Tac Toe)*
+> *"Three in a row wins it all. Challenge a friend or take on an unbeatable AI."*
+- PvP + vs CPU · 3 difficulties · Minimax AI · TypeScript + SCSS + Vite
 
 ---
 
-## ⚖️ v1 vs v2 — Quick Comparison
+## 🆕 v1 → v2 Full Comparison
 
-| Feature | v1 The Scaffold | v2 Gallows Noir |
+### Design
+
+| Aspect | v1 — JS Games | v2 — JS Game Station |
 |---|---|---|
-| Theme | Light pastel | ✅ Dark noir + animations |
-| Hangman drawing | `<div>` CSS borders | ✅ SVG with animated reveal |
-| Categories | 4 | ✅ 6 |
-| Difficulty | ❌ | ✅ Easy / Medium / Hard |
-| Leaderboard | ❌ | ✅ localStorage top 5 |
-| Physical keyboard | ❌ | ✅ |
-| Timer | ❌ | ✅ Live + score decay |
-| Wrong letters display | ❌ | ✅ |
-| Word hints | ❌ | ✅ Description per word |
-| Score multiplier | ❌ | ✅ ×1 / ×1.5 / ×2 |
-| `var` | ✅ | → `const` / `let` |
+| **Theme** | Dark flat cards | ✅ Retro Arcade × Cyberpunk Terminal |
+| **Font** | `Bebas Neue` + `DM Mono` | ✅ `Orbitron` + `Space Mono` + `DM Sans` |
+| **Background** | Animated grid + static glow blobs | ✅ Canvas-rendered grid + animated glow blobs + moving neon dots |
+| **Title effect** | CSS shimmer on static text | ✅ Letter-by-letter typing animation (infinite loop) |
+| **Tagline** | Static text | ✅ 4 rotating taglines — type → delete → loop |
+| **CRT effect** | ❌ None | ✅ Scanline overlay on page + per card |
+| **Cursor** | Browser default | ✅ Custom neon dot + lagging ring + 8 trailing color dots |
+| **Card style** | Simple dark card with hover lift | ✅ 3D tilt on mouse move + expanding glow border |
+| **Card border** | Static corner brackets | ✅ Animated corner brackets that grow on hover |
+
+### Card Features
+
+| Feature | v1 | v2 |
+|---|---|---|
+| **Game icon** | ❌ No icon | ✅ Floating badge on top edge with pulse ring |
+| **Preview area** | ❌ No preview | ✅ CSS-animated live preview per game |
+| **Preview on hover** | ❌ N/A | ✅ Expands from 160px → 220px + animation scales up |
+| **Description** | Short tagline only | ✅ Full description paragraph |
+| **Tech stack** | ❌ Not shown | ✅ Tech pills per card (HTML · CSS · JS · TypeScript) |
+| **Release date** | ❌ Not shown | ✅ Month + year per card |
+| **CTA button** | Simple arrow link | ✅ `LAUNCH GAME ↗` with animated arrow |
+
+### Animations
+
+| Animation | v1 | v2 |
+|---|---|---|
+| Background grid | CSS `background-position` animation | ✅ Canvas `requestAnimationFrame` — precise control |
+| Floating particles | 22 CSS particles | ✅ 18 colored neon particles with glow |
+| Title | CSS shimmer | ✅ JS typewriter with infinite write/delete |
+| Cards | `translateY` on hover | ✅ Full 3D perspective tilt + scale |
+| Score counters | ❌ None | ✅ Count-up animation on scroll into view |
+| Card reveal | None | ✅ Staggered scroll reveal per card |
+| Hangman preview | ❌ None | ✅ CSS swaying figure animation |
+| Noir bars | ❌ None | ✅ Pulsing difficulty bars + animated tags |
+| TTT board | ❌ None | ✅ Animated winning cells with neon glow |
+
+### Credentials & Social
+
+| Feature | v1 | v2 |
+|---|---|---|
+| **Info shown** | Course · Instructor · Program · Author | ✅ Developer · Program · Stack · Year |
+| **Tone** | Academic assignment | ✅ Personal portfolio |
+| **Social links** | GitHub + LinkedIn only | ✅ GitHub · LinkedIn · Facebook · Instagram · Email |
+| **Social hover** | Basic color change | ✅ Brand color per platform + tooltip label |
+| **X (Twitter)** | ✅ Present | ✅ Removed |
+
+### Code Structure
+
+| Aspect | v1 | v2 |
+|---|---|---|
+| **Files** | 1 self-contained `index.html` | ✅ Separated: `index.html` + `style.css` + `script.js` |
+| **Background** | CSS only | ✅ HTML5 Canvas API |
+| **Cursor** | Browser default | ✅ Custom JS cursor with trail |
+| **Animations** | CSS `@keyframes` only | ✅ CSS + `requestAnimationFrame` |
+| **Scroll effects** | ❌ None | ✅ `IntersectionObserver` for counters + card reveal |
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ v2 Features Summary
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+- Canvas animated background — grid + glow blobs + moving neon dots
+- Infinite typewriter — title types once, taglines rotate forever
+- Custom cursor — neon dot + lagging ring + 8-dot color trail
+- CRT scanline overlay — subtle retro effect on page and cards
+- Header stats — animated count-up (3 games · 5 versions · 2026)
+- 3D card tilt — perspective rotate follows mouse position
+- Live animated game previews inside each card
+- Preview expands on hover (160px → 220px)
+- Floating icon badge per card with pulse ring
+- Tech stack pills per game
+- Staggered scroll reveal on cards
+- Corner bracket animations on hover
+- Rotating glow border on card hover
+- 5 social links with brand colors and tooltips
+- Fully responsive — 3 cols → 2 → 1
 
 ---
 
-## 🧠 Concepts Used
+## 🛠️ Tech Used
 
-| Concept | Used In |
+| Tech | Usage |
 |---|---|
-| DOM Manipulation | Both versions |
-| `localStorage` | v2 leaderboard |
-| `Math.random()` + `Math.floor()` | Random word selection |
-| `addEventListener` | Keyboard + button events |
-| CSS Variables | v2 theming |
-| `@keyframes` animations | v2 background, title, SVG parts |
-| SVG elements | v2 hangman drawing |
-| Regex validation | v2 name input |
-| `Set` | v2 guessed letters tracking |
-| `const` / `let` | v2 throughout |
+| HTML5 | Semantic page structure |
+| CSS3 | Variables, animations, grid, 3D transforms, responsive |
+| JavaScript | Canvas, typewriter, cursor trail, IntersectionObserver, card tilt |
+| HTML5 Canvas API | Animated background rendering |
+| Google Fonts | `Orbitron` + `Space Mono` + `DM Sans` |
 
 ---
 
-## 📋 Changelog
+## 📸 Card Color System
 
-### ⭐ v2.0 — Gallows Noir *(2026)*
-
-**New Features:**
-- Added difficulty system — Easy / Medium / Hard
-- Added leaderboard — top 5 scores via `localStorage`
-- Added physical keyboard support
-- Added live timer with score decay
-- Added wrong letters display
-- Added word description hints
-- Added 2 new categories — Countries + Technology
-- Added SVG hangman with animated part reveal
-- Added floating particles background animation
-- Added shimmer effect on title
-- Added glass morphism top bar
-- Added corner bracket decorations on result screen
-- Added score multiplier per difficulty (×1 / ×1.5 / ×2)
-
-**Improvements:**
-- `var` → `const` / `let` with `'use strict'`
-- Validation: `charCodeAt()` loop → regex `/^[a-zA-Z\s]+$/`
-- Hangman parts now scale dynamically to difficulty level
-- Score floored at 0 — can no longer go negative
-- Play Again no longer reloads page — restarts same category cleanly
-- Files separated: `index.html` + `style.css` + `script.js`
-- Words upgraded to objects with `word` + `hint` description
-
-**Bug Fixes:**
-- Fixed score going negative on multiple wrong guesses
-- Fixed Play Again resetting player name and state
-- Fixed hangman parts not scaling to difficulty
-- Fixed validation accepting numbers as player name
+| Card | Accent Color | Game |
+|---|---|---|
+| The Scaffold | 🔵 `#00d4ff` Cyan | Hangman v1 |
+| Gallows Noir | 🟡 `#f7df1e` Yellow | Hangman v2 |
+| Grid Wars | 🟢 `#39ff14` Neon Green | Tic Tac Toe |
 
 ---
 
-### ⚙️ v1.0 — The Scaffold *(2026)*
-
-**Initial Release:**
-- 4 categories — Programming, Movies, Animals, Sports
-- Player name validation
-- Interactive letter keyboard
-- Visual hangman drawing — 8 stages
-- Real-time score tracking (600 pts, −25 per wrong)
-- Hint system — reveals one random letter
-- Win / lose result screen
-
----
----
-
-*Hangman Game — Final Lab · BasicJs Course · ITI ICC Program · Full-Stack MEARN Track · 2026*
+*JS Game Station · ITI ICC Program · Full-Stack MEARN Track · 2026*
+*Built by Mahmoud Awad Saad*
