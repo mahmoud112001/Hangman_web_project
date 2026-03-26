@@ -1,0 +1,16 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin glass-panel {
+    background: $glass-color;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+@mixin neon-shadow($color) {
+    box-shadow: 0 0 10px $color, 0 0 20px rgba($color, 0.5);
+}
