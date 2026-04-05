@@ -472,7 +472,7 @@ Hangman_web_project/
 
 *JS Game Station · ITI ICC Program · Full-Stack MEARN Track · Alexandria · 2026*
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Now-f7df1e?style=for-the-badge&labelColor=07080d)](https://mahmoud112001.github.io/Hangman_web_project/)
+[![Try The Game](https://img.shields.io/badge/🌐_Portfolio-Visit_Now-f7df1e?style=for-the-badge&labelColor=07080d)](https://mahmoud112001.github.io/JS-Game-Station/)
 [![GitHub](https://img.shields.io/badge/GitHub-@mahmoud112001-100000?style=for-the-badge&logo=github&labelColor=07080d)](https://github.com/mahmoud112001)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&labelColor=07080d)](https://www.linkedin.com/in/mahmoud-awad-795b02203/)
 
