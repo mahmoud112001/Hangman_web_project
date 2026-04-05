@@ -56,7 +56,7 @@
 
 ## Landing Page
 
-> **[🔗 mahmoud112001.github.io/Hangman_web_project](https://mahmoud112001.github.io/Hangman_web_project/)**
+> **[🔗 mahmoud112001.github.io/JS-Game_Station](https://mahmoud112001.github.io/JS-Game-Station/)**
 
 The landing page is the entry point to the entire collection. It uses a **Retro Arcade × Cyberpunk Terminal** design language with full interactivity.
 
